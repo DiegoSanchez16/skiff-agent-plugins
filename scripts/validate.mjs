@@ -77,7 +77,6 @@ if (!codexMcp?.mcp_servers?.skiff?.bearer_token_env_var) {
 }
 
 assertFrontmatter("cursor/commands/fix-skiff-ticket.md", ["name", "description"])
-assertFrontmatter("cursor/skills/fix-ticket/SKILL.md", ["name", "description"])
 assertFrontmatter("cursor/rules/skiff-ticket-handoff.mdc", ["description", "alwaysApply"])
 assertFrontmatter("claude-code/skills/fix-ticket/SKILL.md", ["description"])
 assertFrontmatter("codex/skills/fix-ticket/SKILL.md", ["name", "description"])
@@ -89,4 +88,3 @@ if (errors.length > 0) {
 }
 
 console.log("Validation passed.")
-

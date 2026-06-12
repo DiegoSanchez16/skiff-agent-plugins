@@ -37,12 +37,14 @@ The Cursor plugin is the first complete target. It contains:
 - a plugin manifest
 - Skiff MCP config
 - a `fix-skiff-ticket` command
-- a `fix-ticket` skill
+- a Skiff ticket handoff rule
 
-Install locally while developing by symlinking the Cursor plugin folder:
+Install locally while developing by copying the Cursor plugin folder:
 
 ```bash
-ln -s "$(pwd)/cursor" ~/.cursor/plugins/local/skiff
+rm -rf ~/.cursor/plugins/local/skiff
+mkdir -p ~/.cursor/plugins/local/skiff
+cp -R cursor/. ~/.cursor/plugins/local/skiff/
 ```
 
 Then restart Cursor or run `Developer: Reload Window`.
