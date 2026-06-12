@@ -1,0 +1,9 @@
+{
+  "mcp_servers": {
+    "skiff": {
+      "url": "https://app.getskiff.com/api/mcp",
+      "bearer_token_env_var": "SKIFF_MCP_TOKEN"
+    }
+  }
+}
+

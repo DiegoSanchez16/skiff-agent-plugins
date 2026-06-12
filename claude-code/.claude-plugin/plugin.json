@@ -1,0 +1,9 @@
+{
+  "name": "skiff",
+  "description": "Fix Skiff tickets from Claude Code using Skiff MCP.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Skiff"
+  }
+}
+

@@ -1,0 +1,25 @@
+{
+  "name": "skiff",
+  "version": "0.1.0",
+  "description": "Fix Skiff tickets from Codex using Skiff MCP.",
+  "author": {
+    "name": "Skiff"
+  },
+  "license": "MIT",
+  "keywords": ["skiff", "mcp", "feedback", "tickets"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Skiff",
+    "shortDescription": "Fix Skiff tickets from your local repo.",
+    "longDescription": "Use Skiff MCP to read ticket context, screenshots, and fix packets before implementing changes in the current local repository.",
+    "developerName": "Skiff",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Use Skiff to fix ticket E3AE25."
+    ],
+    "brandColor": "#111827"
+  }
+}
+

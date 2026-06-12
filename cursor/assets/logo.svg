@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Skiff">
+  <rect width="128" height="128" rx="24" fill="#111827"/>
+  <path d="M36 82c8 10 19 15 32 15 16 0 28-8 28-21 0-11-7-17-22-21l-16-4c-7-2-10-5-10-10 0-6 6-10 16-10 9 0 17 3 24 10l8-14c-8-8-19-12-32-12-17 0-29 9-29 22 0 11 7 18 22 22l16 4c7 2 10 5 10 10 0 6-6 10-15 10-10 0-19-4-25-12l-7 11z" fill="#F9FAFB"/>
+  <path d="M30 104h68" stroke="#38BDF8" stroke-width="8" stroke-linecap="round"/>
+</svg>
+
