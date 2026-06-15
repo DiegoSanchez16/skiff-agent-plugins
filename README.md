@@ -10,29 +10,21 @@ This repository packages the last-mile install experience for local coding agent
 - `claude-code/` - Claude Code plugin scaffold.
 - `codex/` - Codex plugin scaffold.
 
-## MCP
+## Cursor
 
-Set a Skiff MCP token in your shell environment:
-
-```bash
-export SKIFF_MCP_TOKEN="skiff_mcp_..."
-```
-
-The plugins point at:
+The Cursor plugin connects Cursor to the hosted Skiff MCP server:
 
 ```text
 https://app.getskiff.com/api/mcp
 ```
 
-For local Skiff development, change the plugin MCP URL to:
+Create a Skiff MCP token in Skiff, then expose it to Cursor as:
 
-```text
-http://localhost:3002/api/mcp
+```bash
+export SKIFF_MCP_TOKEN="skiff_mcp_..."
 ```
 
-## Cursor First
-
-The Cursor plugin is the first complete target. It contains:
+The plugin includes:
 
 - a plugin manifest
 - Skiff MCP config
