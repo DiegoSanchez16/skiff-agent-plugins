@@ -1,0 +1,17 @@
+{
+  "name": "skiff-agent-plugins",
+  "owner": {
+    "name": "Skiff"
+  },
+  "metadata": {
+    "description": "Skiff plugins for local coding-agent handoff.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "skiff",
+      "source": "claude-code",
+      "description": "Fix Skiff tickets from Claude Desktop and Claude Code using Skiff MCP."
+    }
+  ]
+}
