@@ -66,8 +66,8 @@ if (cursorMarketplace?.plugins?.[0]?.source !== "cursor") {
   errors.push(".cursor-plugin/marketplace.json: expected first plugin source to be cursor")
 }
 if (cursorManifest?.name !== "skiff") errors.push("cursor plugin name must be skiff")
-if (claudeMarketplace?.plugins?.[0]?.source !== "claude-code") {
-  errors.push(".claude-plugin/marketplace.json: expected first plugin source to be claude-code")
+if (claudeMarketplace?.plugins?.[0]?.source !== "./claude-code") {
+  errors.push(".claude-plugin/marketplace.json: expected first plugin source to be ./claude-code")
 }
 if (!cursorMcp?.mcpServers?.skiff?.url) errors.push("cursor MCP server skiff.url missing")
 if (!cursorMcp?.mcpServers?.skiff?.headers?.Authorization?.includes("SKIFF_MCP_TOKEN")) {
