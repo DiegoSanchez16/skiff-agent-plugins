@@ -1,12 +1,14 @@
 {
   "mcpServers": {
     "skiff": {
-      "type": "http",
-      "url": "https://app.getskiff.com/api/mcp",
-      "headers": {
-        "Authorization": "Bearer ${SKIFF_MCP_TOKEN}"
-      }
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://app.getskiff.com/api/mcp",
+        "--header",
+        "Authorization:Bearer ${SKIFF_MCP_TOKEN}"
+      ]
     }
   }
 }
-

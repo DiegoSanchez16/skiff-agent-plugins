@@ -74,7 +74,15 @@ if (!cursorMcp?.mcpServers?.skiff?.headers?.Authorization?.includes("SKIFF_MCP_T
   errors.push("cursor MCP Authorization header must use SKIFF_MCP_TOKEN")
 }
 if (claudeManifest?.name !== "skiff") errors.push("claude plugin name must be skiff")
-if (!claudeMcp?.mcpServers?.skiff?.url) errors.push("claude MCP server skiff.url missing")
+if (claudeMcp?.mcpServers?.skiff?.command !== "npx") {
+  errors.push("claude MCP server must launch through npx")
+}
+if (!Array.isArray(claudeMcp?.mcpServers?.skiff?.args) || !claudeMcp.mcpServers.skiff.args.includes("mcp-remote")) {
+  errors.push("claude MCP server must use mcp-remote args")
+}
+if (!Array.isArray(claudeMcp?.mcpServers?.skiff?.args) || !claudeMcp.mcpServers.skiff.args.some((value) => typeof value === "string" && value.includes("SKIFF_MCP_TOKEN"))) {
+  errors.push("claude MCP args must reference SKIFF_MCP_TOKEN")
+}
 if (codexManifest?.name !== "skiff") errors.push("codex plugin name must be skiff")
 if (!codexMcp?.mcp_servers?.skiff?.bearer_token_env_var) {
   errors.push("codex MCP bearer_token_env_var missing")
