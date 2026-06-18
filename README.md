@@ -95,6 +95,8 @@ Add the marketplace from Codex Desktop:
 
 Leave Git ref and Sparse paths empty unless Codex asks for them.
 
+After the marketplace is added, find Skiff in Codex Desktop and click **Add plugin**.
+
 Create a Skiff MCP token in Skiff, then connect Codex Desktop with:
 
 ```bash
