@@ -1,18 +1,18 @@
 # Skiff Agent Plugins
 
-Last-mile integrations for Skiff ticket handoff in local coding tools.
+MCP setup helpers for Skiff ticket handoff in local coding tools.
 
-The Skiff app owns ticket data, auth, repo linking, and the hosted MCP server. This repo packages the tool-specific layer that lets local agents read a Skiff ticket code like `E3AE25` and pull the full ticket through Skiff MCP.
+The Skiff app owns ticket data, auth, repo linking, and the hosted MCP server. This repo packages the tool-specific setup that lets local agents read a Skiff ticket code like `E3AE25` and pull the full ticket through Skiff MCP.
 
 ## Integration status
 
-- `cursor/` - Cursor plugin for Cursor's plugin system. Submitted to the Cursor marketplace and tested locally.
-- `claude-code/` - Claude Desktop marketplace plugin for Claude Code sessions. Tested with `@getskiff/connect` for auth setup.
+- `cursor/` - Cursor plugin that configures Skiff MCP plus a ticket command/rule. Submitted to the Cursor marketplace and tested locally.
+- `claude-code/` - Claude Desktop marketplace plugin that configures Skiff MCP for Claude Code. Tested with `@getskiff/connect` for token setup.
 - `codex/` - Codex plugin scaffold. Not ready for user-facing install yet.
 
 ## Cursor
 
-The Cursor plugin connects Cursor to the hosted Skiff MCP server:
+The Cursor plugin adds Skiff MCP configuration plus a ticket command/rule for Cursor:
 
 ```text
 https://app.getskiff.com/api/mcp
@@ -43,9 +43,9 @@ Then restart Cursor or run `Developer: Reload Window`.
 
 ## Claude Desktop
 
-Add this repository as a Claude marketplace, then install the Skiff plugin from Claude Desktop. The plugin bundles a `/skiff:fix-ticket` skill and a Skiff MCP server that connects through `npx mcp-remote`.
+Add this repository as a Claude marketplace, then install the Skiff plugin from Claude Desktop. The plugin bundles a `/skiff:fix-ticket` skill and Skiff MCP configuration for Claude Code.
 
-Create a Skiff MCP token in Skiff, then connect Claude Code with the helper command:
+Create a Skiff MCP token in Skiff, then use `@getskiff/connect` to save that token where Claude Code can read it:
 
 ```bash
 npx @getskiff/connect "skiff_mcp_..."
