@@ -45,6 +45,13 @@ Then restart Cursor or run `Developer: Reload Window`.
 
 Add this repository as a Claude marketplace, then install the Skiff plugin from Claude Desktop. The plugin bundles a `/skiff:fix-ticket` skill and Skiff MCP configuration for Claude Code.
 
+Claude marketplace source:
+
+```text
+GitHub repo: DiegoSanchez16/skiff-agent-plugins
+Git URL: https://github.com/DiegoSanchez16/skiff-agent-plugins
+```
+
 Create a Skiff MCP token in Skiff, then use `@getskiff/connect` to save that token where Claude Code can read it:
 
 ```bash
