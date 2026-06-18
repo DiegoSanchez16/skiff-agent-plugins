@@ -1,0 +1,17 @@
+{
+  "name": "skiff-agent-plugins",
+  "plugins": [
+    {
+      "name": "skiff",
+      "source": {
+        "source": "local",
+        "path": "./codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

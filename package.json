@@ -1,6 +1,6 @@
 {
   "name": "@getskiff/connect",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Connect local coding agents to Skiff MCP.",
   "license": "MIT",
   "bin": {

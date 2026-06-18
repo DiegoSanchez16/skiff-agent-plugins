@@ -8,7 +8,6 @@
   "license": "MIT",
   "keywords": ["skiff", "mcp", "feedback", "tickets"],
   "skills": "./skills/",
-  "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Skiff",
     "shortDescription": "Fix Skiff tickets from your local repo.",
@@ -22,4 +21,3 @@
     "brandColor": "#111827"
   }
 }
-

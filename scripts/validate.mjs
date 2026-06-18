@@ -50,18 +50,19 @@ function assertFrontmatter(path, keys) {
 
 const cursorMarketplace = readJson(".cursor-plugin/marketplace.json")
 const claudeMarketplace = readJson(".claude-plugin/marketplace.json")
+const codexMarketplace = readJson(".agents/plugins/marketplace.json")
 const packageJson = readJson("package.json")
 const cursorManifest = readJson("cursor/.cursor-plugin/plugin.json")
 const cursorMcp = readJson("cursor/mcp.json")
 const claudeManifest = readJson("claude-code/.claude-plugin/plugin.json")
 const claudeMcp = readJson("claude-code/.mcp.json")
 const codexManifest = readJson("codex/.codex-plugin/plugin.json")
-const codexMcp = readJson("codex/.mcp.json")
 
 assertDir("cursor")
 assertDir("claude-code")
 assertDir("codex")
 assertFile("bin/skiff-connect.mjs")
+assertFile(".agents/plugins/marketplace.json")
 assertFile("cursor/assets/logo.svg")
 
 if (packageJson?.bin?.connect !== "bin/skiff-connect.mjs") {
@@ -92,8 +93,11 @@ if (!Array.isArray(claudeMcp?.mcpServers?.skiff?.args) || !claudeMcp.mcpServers.
   errors.push("claude MCP args must reference SKIFF_MCP_TOKEN")
 }
 if (codexManifest?.name !== "skiff") errors.push("codex plugin name must be skiff")
-if (!codexMcp?.mcp_servers?.skiff?.bearer_token_env_var) {
-  errors.push("codex MCP bearer_token_env_var missing")
+if (codexManifest && Object.hasOwn(codexManifest, "mcpServers")) {
+  errors.push("codex plugin should not bundle MCP auth; @getskiff/connect writes Codex MCP config")
+}
+if (codexMarketplace?.plugins?.[0]?.source?.path !== "./codex") {
+  errors.push(".agents/plugins/marketplace.json: expected first plugin source path to be ./codex")
 }
 
 assertFrontmatter("cursor/commands/fix-skiff-ticket.md", ["name", "description"])
