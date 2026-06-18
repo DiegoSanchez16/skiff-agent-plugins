@@ -91,8 +91,9 @@ Codex Desktop can add this repository as a plugin marketplace. The Codex plugin 
 Add the marketplace from Codex Desktop:
 
 - Source: `DiegoSanchez16/skiff-agent-plugins`
-- Git ref: `main`
-- Sparse paths: `.agents/plugins` and `codex`
+- Git URL: `https://github.com/DiegoSanchez16/skiff-agent-plugins`
+
+Leave Git ref and Sparse paths empty unless Codex asks for them.
 
 Create a Skiff MCP token in Skiff, then connect Codex Desktop with:
 
