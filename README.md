@@ -48,7 +48,7 @@ Add this repository as a Claude marketplace, then install the Skiff plugin from 
 Create a Skiff MCP token in Skiff, then connect Claude Code with the helper command:
 
 ```bash
-npx skiff-connect "skiff_mcp_..."
+npx @getskiff/connect "skiff_mcp_..."
 ```
 
 Until `skiff-connect` is published to npm, test from this GitHub repo:
