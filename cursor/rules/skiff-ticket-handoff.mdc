@@ -3,5 +3,4 @@ description: Use Skiff MCP as the source of truth for Skiff ticket handoffs.
 alwaysApply: false
 ---
 
-When working on a Skiff ticket, use Skiff MCP before editing code. Read the ticket, assets, and fix packet first, then inspect the local repo and implement the smallest useful fix.
-
+When working on a Skiff ticket, use Skiff MCP before editing code. Read the ticket, assets, and fix packet first, mark the ticket in progress when starting local work, then inspect the local repo and implement the smallest useful fix. After verification, ask whether to mark the ticket closed and only call `mark_ticket_resolved` after the user confirms.

@@ -64,6 +64,8 @@ assertDir("codex")
 assertFile("bin/skiff-connect.mjs")
 assertFile(".agents/plugins/marketplace.json")
 assertFile("cursor/assets/logo.svg")
+assertFile("claude-code/assets/logo.svg")
+assertFile("codex/assets/logo.svg")
 
 if (packageJson?.bin?.connect !== "bin/skiff-connect.mjs") {
   errors.push("package.json: expected connect bin")
@@ -96,11 +98,17 @@ if (codexManifest?.name !== "skiff") errors.push("codex plugin name must be skif
 if (codexManifest && Object.hasOwn(codexManifest, "mcpServers")) {
   errors.push("codex plugin should not bundle MCP auth; @getskiff/connect writes Codex MCP config")
 }
+if (codexManifest?.interface?.iconSmall !== "./assets/logo.svg") {
+  errors.push("codex plugin iconSmall must point to ./assets/logo.svg")
+}
+if (codexMarketplace?.name !== "Skiff") {
+  errors.push(".agents/plugins/marketplace.json: expected marketplace name to be Skiff")
+}
 if (codexMarketplace?.plugins?.[0]?.source?.path !== "./codex") {
   errors.push(".agents/plugins/marketplace.json: expected first plugin source path to be ./codex")
 }
 
-assertFrontmatter("cursor/commands/fix-skiff-ticket.md", ["name", "description"])
+assertFrontmatter("cursor/commands/skiff.md", ["name", "description"])
 assertFrontmatter("cursor/rules/skiff-ticket-handoff.mdc", ["description", "alwaysApply"])
 assertFrontmatter("claude-code/skills/fix-ticket/SKILL.md", ["description"])
 assertFrontmatter("codex/skills/fix-ticket/SKILL.md", ["name", "description"])

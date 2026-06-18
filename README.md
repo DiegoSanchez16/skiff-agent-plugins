@@ -28,7 +28,7 @@ The plugin includes:
 
 - a plugin manifest
 - Skiff MCP config
-- a `fix-skiff-ticket` command
+- a `/skiff` command
 - a Skiff ticket handoff rule
 
 Install locally while developing by copying the Cursor plugin folder:
