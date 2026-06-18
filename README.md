@@ -68,3 +68,11 @@ The command writes the token to Claude Code settings:
 ```
 
 If `~/.claude/settings.json` already has an `env` object, add only `SKIFF_MCP_TOKEN` inside it. Start a new Claude Code session after changing settings, then run `/mcp` to confirm `skiff` is connected.
+
+To disconnect Claude from Skiff MCP:
+
+```bash
+npx @getskiff/connect disconnect
+```
+
+The disconnect command removes only `SKIFF_MCP_TOKEN` from `~/.claude/settings.json`. It preserves the rest of your Claude settings.
