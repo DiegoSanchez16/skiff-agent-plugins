@@ -50,6 +50,7 @@ function assertFrontmatter(path, keys) {
 
 const cursorMarketplace = readJson(".cursor-plugin/marketplace.json")
 const claudeMarketplace = readJson(".claude-plugin/marketplace.json")
+const packageJson = readJson("package.json")
 const cursorManifest = readJson("cursor/.cursor-plugin/plugin.json")
 const cursorMcp = readJson("cursor/mcp.json")
 const claudeManifest = readJson("claude-code/.claude-plugin/plugin.json")
@@ -60,8 +61,12 @@ const codexMcp = readJson("codex/.mcp.json")
 assertDir("cursor")
 assertDir("claude-code")
 assertDir("codex")
+assertFile("bin/skiff-connect.mjs")
 assertFile("cursor/assets/logo.svg")
 
+if (packageJson?.bin?.["skiff-connect"] !== "bin/skiff-connect.mjs") {
+  errors.push("package.json: expected skiff-connect bin")
+}
 if (cursorMarketplace?.plugins?.[0]?.source !== "cursor") {
   errors.push(".cursor-plugin/marketplace.json: expected first plugin source to be cursor")
 }

@@ -40,3 +40,31 @@ cp -R cursor/. ~/.cursor/plugins/local/skiff/
 ```
 
 Then restart Cursor or run `Developer: Reload Window`.
+
+## Claude Desktop
+
+Add this repository as a Claude marketplace, then install the Skiff plugin from Claude Desktop. The plugin bundles a `/skiff:fix-ticket` skill and a Skiff MCP server that connects through `npx mcp-remote`.
+
+Create a Skiff MCP token in Skiff, then connect Claude Code with the helper command:
+
+```bash
+npx skiff-connect "skiff_mcp_..."
+```
+
+Until `skiff-connect` is published to npm, test from this GitHub repo:
+
+```bash
+npx -y github:DiegoSanchez16/skiff-agent-plugins "skiff_mcp_..."
+```
+
+The command writes the token to Claude Code settings:
+
+```json
+{
+  "env": {
+    "SKIFF_MCP_TOKEN": "skiff_mcp_..."
+  }
+}
+```
+
+If `~/.claude/settings.json` already has an `env` object, add only `SKIFF_MCP_TOKEN` inside it. Start a new Claude Code session after changing settings, then run `/mcp` to confirm `skiff` is connected.
