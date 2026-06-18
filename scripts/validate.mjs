@@ -64,6 +64,9 @@ assertDir("codex")
 assertFile("bin/skiff-connect.mjs")
 assertFile("cursor/assets/logo.svg")
 
+if (packageJson?.bin?.connect !== "bin/skiff-connect.mjs") {
+  errors.push("package.json: expected connect bin")
+}
 if (packageJson?.bin?.["skiff-connect"] !== "bin/skiff-connect.mjs") {
   errors.push("package.json: expected skiff-connect bin")
 }
