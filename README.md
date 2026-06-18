@@ -1,14 +1,14 @@
 # Skiff Agent Plugins
 
-Native coding-tool plugins for Skiff ticket handoff.
+Last-mile integrations for Skiff ticket handoff in local coding tools.
 
-This repository packages the last-mile install experience for local coding agents. The Skiff app owns ticket data, auth, repo linking, and the hosted MCP server. These plugins teach each coding tool how to connect to Skiff MCP and work from a ticket code like `E3AE25`.
+The Skiff app owns ticket data, auth, repo linking, and the hosted MCP server. This repo packages the tool-specific layer that lets local agents read a Skiff ticket code like `E3AE25` and pull the full ticket through Skiff MCP.
 
-## Plugins
+## Integration status
 
-- `cursor/` - Cursor plugin. Build and test this first.
-- `claude-code/` - Claude Code plugin scaffold.
-- `codex/` - Codex plugin scaffold.
+- `cursor/` - Cursor plugin for Cursor's plugin system. Submitted to the Cursor marketplace and tested locally.
+- `claude-code/` - Claude Desktop marketplace plugin for Claude Code sessions. Tested with `@getskiff/connect` for auth setup.
+- `codex/` - Codex plugin scaffold. Not ready for user-facing install yet.
 
 ## Cursor
 
@@ -51,7 +51,7 @@ Create a Skiff MCP token in Skiff, then connect Claude Code with the helper comm
 npx @getskiff/connect "skiff_mcp_..."
 ```
 
-Until `skiff-connect` is published to npm, test from this GitHub repo:
+For local package development, you can test from this GitHub repo:
 
 ```bash
 npx -y github:DiegoSanchez16/skiff-agent-plugins "skiff_mcp_..."
