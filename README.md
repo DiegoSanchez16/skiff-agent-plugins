@@ -6,28 +6,35 @@ The Skiff app owns ticket data, auth, repo linking, and the hosted MCP server. T
 
 ## Integration status
 
-- `cursor/` - Cursor plugin that configures Skiff MCP plus a ticket command/rule. Submitted to the Cursor marketplace and tested locally.
+- `cursor/` - Cursor plugin with a ticket command/rule. Skiff MCP is configured separately as a user MCP server in Cursor.
 - `claude-code/` - Claude Desktop marketplace plugin that configures Skiff MCP for Claude Code. Tested with `@getskiff/connect` for token setup.
 - `codex/` - Codex Desktop plugin scaffold with a marketplace entry. Token setup is handled by `@getskiff/connect codex`.
 
 ## Cursor
 
-The Cursor plugin adds Skiff MCP configuration plus a ticket command/rule for Cursor:
+Cursor uses two pieces:
 
-```text
-https://app.getskiff.com/api/mcp
-```
+- a user MCP server in Cursor settings
+- a Skiff plugin command/rule for ticket handoff
 
-Create a Skiff MCP token in Skiff, then expose it to Cursor as:
+Create a Skiff MCP token in Skiff, then add Skiff as a custom MCP server in Cursor:
 
-```bash
-export SKIFF_MCP_TOKEN="skiff_mcp_..."
+```json
+{
+  "mcpServers": {
+    "skiff": {
+      "url": "https://app.getskiff.com/api/mcp",
+      "headers": {
+        "Authorization": "Bearer skiff_mcp_..."
+      }
+    }
+  }
+}
 ```
 
 The plugin includes:
 
 - a plugin manifest
-- Skiff MCP config
 - a `/skiff` command
 - a Skiff ticket handoff rule
 

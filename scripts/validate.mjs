@@ -53,7 +53,6 @@ const claudeMarketplace = readJson(".claude-plugin/marketplace.json")
 const codexMarketplace = readJson(".agents/plugins/marketplace.json")
 const packageJson = readJson("package.json")
 const cursorManifest = readJson("cursor/.cursor-plugin/plugin.json")
-const cursorMcp = readJson("cursor/mcp.json")
 const claudeManifest = readJson("claude-code/.claude-plugin/plugin.json")
 const claudeMcp = readJson("claude-code/.mcp.json")
 const codexManifest = readJson("codex/.codex-plugin/plugin.json")
@@ -79,10 +78,6 @@ if (cursorMarketplace?.plugins?.[0]?.source !== "cursor") {
 if (cursorManifest?.name !== "skiff") errors.push("cursor plugin name must be skiff")
 if (claudeMarketplace?.plugins?.[0]?.source !== "./claude-code") {
   errors.push(".claude-plugin/marketplace.json: expected first plugin source to be ./claude-code")
-}
-if (!cursorMcp?.mcpServers?.skiff?.url) errors.push("cursor MCP server skiff.url missing")
-if (!cursorMcp?.mcpServers?.skiff?.headers?.Authorization?.includes("SKIFF_MCP_TOKEN")) {
-  errors.push("cursor MCP Authorization header must use SKIFF_MCP_TOKEN")
 }
 if (claudeManifest?.name !== "skiff") errors.push("claude plugin name must be skiff")
 if (claudeMcp?.mcpServers?.skiff?.command !== "npx") {
